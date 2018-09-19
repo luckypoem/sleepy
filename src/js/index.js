@@ -1,4 +1,4 @@
-import Highway from "@dogstudio/highway/build/es5/highway";
+import Highway from "@dogstudio/highway";
 
 class Index extends Highway.Renderer {
   onEnter() {
