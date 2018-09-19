@@ -1,4 +1,4 @@
-import Highway from "@dogstudio/highway";
+import Highway from "@dogstudio/highway/build/es5/highway";
 
 const H = new Highway.Core({
   renderers: {
