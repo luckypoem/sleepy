@@ -1,3 +1,3 @@
-import { copyright } from '../sleepy.config';
+import { seo } from '../sleepy.config';
 
-export default () => <div>{copyright}</div>
+export default () => <div>{seo.copyright}</div>
