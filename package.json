@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "I am sleepy",
   "scripts": {
-    "start": "./node_modules/.bin/react-static start",
-    "stage": "./node_modules/.bin/react-static build --staging",
-    "build": "./node_modules/.bin/react-static build",
-    "bundle": "./node_modules/.bin/react-static bundle",
-    "export": "./node_modules/.bin/react-static export",
-    "serve": "serve dist -p 3000 -s"
+    "start": "next",
+    "create:cname": "touch docs/CNAME && echo \"sleepy.im\" >> docs/CNAME",
+    "build": "next build && next export -o docs && touch docs/.nojekyll && npm run create:cname"
   },
   "repository": {
     "type": "git",
@@ -22,15 +19,12 @@
   },
   "homepage": "https://github.com/zhw2590582/sleepy#readme",
   "devDependencies": {
-    "eslint-config-react-tools": "1.x.x",
-    "serve": "10.1.1"
+    "next": "^8.0.3",
+    "@zeit/next-sass": "^1.0.1",
+    "node-sass": "^4.11.0"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
-    "axios": "^0.18.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.18"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }
