@@ -1,11 +1,8 @@
-// pages/index.js
-import Link from 'next/link'
+import Head from '../components/Head';
+import Home from '../layouts/Home';
 
 export default () =>
   <div>
-    Click{' '}
-    <Link href={{ pathname: '/about', query: { name: 'Zeit' }}}>
-      <a>here</a>
-    </Link>{' '}
-    to read more
+    <Head title="test" />
+    <Home>test</Home>
   </div>

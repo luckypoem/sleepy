@@ -1,1 +1,1 @@
-export default () => <p>Welcome to About!</p>
+export default () => <div className="page-index">page-index</div>
