@@ -1,7 +1,7 @@
 {
   "name": "sleepy",
   "version": "1.0.0",
-  "description": "I am sleepy",
+  "description": "I am sleepy, talk about later.",
   "scripts": {
     "start": "next",
     "create:cname": "touch docs/CNAME && echo \"sleepy.im\" >> docs/CNAME",
