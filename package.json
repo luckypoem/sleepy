@@ -3,32 +3,34 @@
   "version": "1.0.0",
   "description": "I am sleepy",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-serve --config ./webpack.config.js --open",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "./node_modules/.bin/react-static start",
+    "stage": "./node_modules/.bin/react-static build --staging",
+    "build": "./node_modules/.bin/react-static build",
+    "bundle": "./node_modules/.bin/react-static bundle",
+    "export": "./node_modules/.bin/react-static export",
+    "serve": "serve dist -p 3000 -s"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhw2590582/I-am-sleepy.git"
+    "url": "git+https://github.com/zhw2590582/sleepy.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhw2590582/I-am-sleepy/issues"
+    "url": "https://github.com/zhw2590582/sleepy/issues"
   },
-  "homepage": "https://github.com/zhw2590582/I-am-sleepy#readme",
+  "homepage": "https://github.com/zhw2590582/sleepy#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-loader": "^8.0.2",
-    "cross-env": "^5.2.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-serve": "^2.0.2"
+    "eslint-config-react-tools": "1.x.x",
+    "serve": "10.1.1"
   },
   "dependencies": {
-    "@dogstudio/highway": "^2.0.1"
+    "@reach/router": "^1.2.1",
+    "axios": "^0.18.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.3.12",
+    "react-static": "^6.0.18"
   }
 }
