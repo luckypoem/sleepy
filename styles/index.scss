@@ -78,6 +78,7 @@ img {
             background-repeat: no-repeat;
             background-position: top center;
             background-size: cover;
+            background-color: #9a8b75;
 
             &::before {
                 content: '';
@@ -187,7 +188,7 @@ img {
                     background-repeat: no-repeat;
                     background-position: center center;
                     background-size: cover;
-                    background-color: rgba(0, 0, 0, 0.8);
+                    background-color: rgba(0, 0, 0, 0.3);
                 }
 
                 .name {
