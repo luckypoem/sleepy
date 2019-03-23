@@ -1,15 +1,44 @@
 import React from "react";
 import Link from "next/link";
 import api from "../api";
-import Loading from "../components/Loading";
-import { images } from "../sleepy.config";
+import { images, post } from "../sleepy.config";
 import { relative } from "../utils";
+
+const PostLoad = () => {
+  return (
+    <div className="post-item">
+      <div className="poster loading" style={{ height: 80 }} />
+      <div className="content">
+        <div
+          className="title loading"
+          style={{ height: 20, marginBottom: 5, width: "80%" }}
+        />
+        <div className="excerpt">
+          <div
+            className="loading"
+            style={{ height: 15, marginBottom: 5, width: "100%" }}
+          />
+          <div
+            className="loading"
+            style={{ height: 15, marginBottom: 5, width: "100%" }}
+          />
+          <div className="loading" style={{ height: 15, width: "50%" }} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.page = 1;
-    this.state = { posts: [] };
+    this.state = {
+      loadState: false,
+      loadEnd: false,
+      page: 1,
+      loadText: "加载更多",
+      posts: []
+    };
   }
 
   componentDidMount() {
@@ -25,11 +54,39 @@ export default class extends React.Component {
       });
   }
 
-  render() {
-    const { posts } = this.state;
+  loadMore() {
+    if (this.state.loadState) {
+      return;
+    }
 
+    this.setState(() => ({
+      loadState: true,
+      loadText: "加载中..."
+    }));
+
+    api
+      .byPage({
+        page: this.state.page + 1
+      })
+      .then(data => {
+        this.setState(prevState => ({
+          loadEnd: data.length < post.pageSize,
+          page: prevState.page,
+          posts: [...prevState.posts, ...data]
+        }));
+      });
+  }
+
+  render() {
+    const { posts, loadText, loadEnd } = this.state;
     if (!posts.length) {
-      return <Loading />;
+      return (
+        <div className="post-list">
+          <PostLoad />
+          <PostLoad />
+          <PostLoad />
+        </div>
+      );
     }
 
     return (
@@ -64,6 +121,14 @@ export default class extends React.Component {
             </div>
           </div>
         ))}
+
+        {loadEnd ? (
+          <div className="loadEnd">加载完毕</div>
+        ) : (
+          <div className="loadMore" onClick={this.loadMore.bind(this)}>
+            {loadText}
+          </div>
+        )}
       </div>
     );
   }
