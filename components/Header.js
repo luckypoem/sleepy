@@ -24,7 +24,7 @@ export default ({ banner }) => (
           </div>
         ))}
       </div>
-      <div className="tool">
+      <div className="github">
           <a href="https://github.com/zhw2590582/sleepy">Github</a>
       </div>
     </div>

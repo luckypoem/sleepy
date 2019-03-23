@@ -28,6 +28,8 @@
     "styled-components": "^4.1.3"
   },
   "dependencies": {
+    "dayjs": "^1.8.11",
+    "get-github-issue": "^1.0.3",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"

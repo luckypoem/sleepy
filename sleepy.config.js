@@ -13,8 +13,9 @@ module.exports = {
         admin: ["zhw2590582"]
     },
     images: {
-        banner: 'https://img1.doubanio.com/view/photo/l/public/p2402150318.webp',
+        banner: 'https://img1.doubanio.com/view/photo/l/public/p2516846469.webp',
         avatar: '',
+        poster: 'https://img1.doubanio.com/view/photo/l/public/p2516846469.webp'
     },
     post: {
         excerpt: 120,
