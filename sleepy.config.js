@@ -12,6 +12,10 @@ module.exports = {
         owner: "zhw2590582",
         admin: ["zhw2590582"]
     },
+    images: {
+        banner: 'https://img3.doubanio.com/view/photo/l/public/p2530640224.webp',
+        avatar: '',
+    },
     post: {
         excerpt: 120,
         pageSize: 5
@@ -23,19 +27,19 @@ module.exports = {
         },
         {
             name: "关于",
-            link: "/about.html"
+            link: "/about"
         },
         {
             name: "归档",
-            link: "/archive.html"
+            link: "/archive"
         },
         {
             name: "留言",
-            link: "/message.html"
+            link: "/message"
         },
         {
             name: "友链",
-            link: "/friends.html"
+            link: "/friends"
         }
     ]
 };

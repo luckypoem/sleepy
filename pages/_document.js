@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="zh-CN">
         <Head>
             <meta charSet="UTF-8" />
             <link rel="shortcut icon" href="/static/favicon.ico" />
