@@ -9,10 +9,10 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    const { query } = this.props;
+    const { id } = this.props;
     this.gitting = new Gitting({
       ...github,
-      number: parseInt(query.id)
+      number: id
     });
     this.gitting.render(this.gittingRef.current);
   }

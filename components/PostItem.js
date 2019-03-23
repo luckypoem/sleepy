@@ -11,17 +11,24 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
       post: {}
     };
   }
 
-  componentDidMount() {
+  searchParams(name) {
     const url = new URL(window.location.href);
-    const id = url.searchParams.get('id');
-    api.byId(Number(id)).then(data => {
-      this.setState(() => ({
-        post: data
-      }));
+    return Promise.resolve(url.searchParams.get(name));
+  }  
+
+  componentDidMount() {
+    this.searchParams('id').then(id => {
+      api.byId(id).then(data => {
+        this.setState(() => ({
+          id: id,
+          post: data
+        }));
+      });
     });
   }
 
@@ -63,7 +70,7 @@ export default class extends React.Component {
             {post.tags.map(tag => <span className="tag">#{tag}</span>)}
           </div>
         </div>
-        <Gitting query={query} />
+        <Gitting id={this.state.id} />
       </div>
     );
   }

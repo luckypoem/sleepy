@@ -41,6 +41,11 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/PostItem.js";
 
 
 
+function searchParams(name) {
+  var url = new URL(window.location.href);
+  return url.searchParams.get(name);
+}
+
 var _default =
 /*#__PURE__*/
 function (_React$Component) {
@@ -53,6 +58,7 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
     _this.state = {
+      id: Number(searchParams('id')),
       post: {}
     };
     return _this;
@@ -63,9 +69,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var url = new URL(window.location.href);
-      var id = url.searchParams.get('id');
-      _api__WEBPACK_IMPORTED_MODULE_7__["default"].byId(id).then(function (data) {
+      _api__WEBPACK_IMPORTED_MODULE_7__["default"].byId(this.state.id).then(function (data) {
         _this2.setState(function () {
           return {
             post: data
@@ -83,7 +87,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_PostLoad__WEBPACK_IMPORTED_MODULE_10__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 36
           },
           __self: this
         });
@@ -93,21 +97,21 @@ function (_React$Component) {
         className: "post-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Title__WEBPACK_IMPORTED_MODULE_8__["default"], {
         title: "".concat(_sleepy_config__WEBPACK_IMPORTED_MODULE_11__["seo"].title, " | ").concat(post.title),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 41
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "post-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -117,14 +121,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
         href: "post?id=".concat(post.id),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
@@ -135,7 +139,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         },
         __self: this
       }, post.title)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -145,21 +149,21 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "time",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 65
         },
         __self: this
       }, Object(_utils__WEBPACK_IMPORTED_MODULE_12__["relative"])(post.created_at)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "tags",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 66
         },
         __self: this
       }, post.tags.map(function (tag) {
@@ -167,15 +171,15 @@ function (_React$Component) {
           className: "tag",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 67
           },
           __self: this
         }, "#", tag);
       }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Gitting__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        query: query,
+        id: this.state.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 70
         },
         __self: this
       }));
@@ -190,4 +194,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=post.js.afa497244fd028eeed6d.hot-update.js.map
+//# sourceMappingURL=post.js.fc7fe39e01978dbe7703.hot-update.js.map
