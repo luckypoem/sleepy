@@ -16,8 +16,9 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    const { query } = this.props;
-    api.byId(query.id).then(data => {
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get('id');
+    api.byId(Number(id)).then(data => {
       this.setState(() => ({
         post: data
       }));
