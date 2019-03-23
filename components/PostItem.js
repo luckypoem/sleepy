@@ -5,7 +5,7 @@ import Title from "./Title";
 import Gitting from "../components/Gitting";
 import PostLoad from "../components/PostLoad";
 import { seo } from "../sleepy.config";
-import { relative } from "../utils";
+import { relative, searchParams } from "../utils";
 
 export default class extends React.Component {
   constructor(props) {
@@ -16,13 +16,8 @@ export default class extends React.Component {
     };
   }
 
-  searchParams(name) {
-    const url = new URL(window.location.href);
-    return Promise.resolve(url.searchParams.get(name));
-  }  
-
   componentDidMount() {
-    this.searchParams('id').then(id => {
+    searchParams('id').then(id => {
       api.byId(id).then(data => {
         this.setState(() => ({
           id: id,
@@ -34,7 +29,6 @@ export default class extends React.Component {
 
   render() {
     const { post } = this.state;
-    const { query } = this.props;
     if (!post.id) {
       return <PostLoad />;
     }

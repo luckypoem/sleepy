@@ -7,3 +7,8 @@ dayjs.locale("zh-cn");
 export function relative(time) {
     return dayjs(time).fromNow();
 }
+
+export function searchParams(name) {
+    const url = new URL(window.location.href);
+    return Promise.resolve(url.searchParams.get(name));
+}
