@@ -10,11 +10,13 @@ export default class extends React.Component {
 
   componentDidMount() {
     const { id } = this.props;
-    this.gitting = new Gitting({
-      ...github,
-      number: id
-    });
-    this.gitting.render(this.gittingRef.current);
+    if (id) {
+      this.gitting = new Gitting({
+        ...github,
+        number: id
+      });
+      this.gitting.render(this.gittingRef.current);
+    }
   }
 
   componentWillUnmount() {
