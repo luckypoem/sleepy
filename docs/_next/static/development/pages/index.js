@@ -169,11 +169,13 @@ function () {
       });
       return this.getRequest(url).then(function (data) {
         var result = data.map(function (item) {
+          var ItemResult = _this4.format(item);
+
           if (_this4.option.cache) {
-            _this4.cache.set("id=".concat(item.number), item);
+            _this4.cache.set("id=".concat(item.number), ItemResult);
           }
 
-          return _this4.format(item);
+          return ItemResult;
         });
 
         if (_this4.option.cache) {
@@ -277,45 +279,10 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Footer.js";
     className: "footer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 3
     },
     __self: this
   }, _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["seo"].copyright);
-});
-
-/***/ }),
-
-/***/ "./components/Head.js":
-/*!****************************!*\
-  !*** ./components/Head.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-server/head */ "./node_modules/next-server/head.js");
-/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Head.js";
-
-
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var title = _ref.title;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
-  }, title));
 });
 
 /***/ }),
@@ -372,7 +339,7 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Header.js";
     className: "menus",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
   }, _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["menus"].map(function (item) {
@@ -381,20 +348,20 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Header.js";
       className: "menu-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 22
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: item.link,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 23
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       },
       __self: this
     }, item.name)));
@@ -402,28 +369,41 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Header.js";
     className: "github",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 29
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/zhw2590582/sleepy",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 30
     },
     __self: this
   }, "Github"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 33
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-bottom",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 34
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["menus"][0].link,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -433,28 +413,28 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Header.js";
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 37
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 45
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 46
     },
     __self: this
   }, _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["seo"].title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "description",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 47
     },
     __self: this
   }, _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["seo"].description))));
@@ -638,6 +618,8 @@ function (_React$Component) {
       }).then(function (data) {
         _this3.setState(function (prevState) {
           return {
+            loadState: false,
+            loadText: "加载更多",
             loadEnd: data.length < _sleepy_config__WEBPACK_IMPORTED_MODULE_9__["post"].pageSize,
             page: prevState.page,
             posts: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(prevState.posts), Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data))
@@ -658,25 +640,25 @@ function (_React$Component) {
           className: "post-list",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 86
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PostLoad, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
-          },
-          __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PostLoad, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 86
-          },
-          __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PostLoad, {
-          __source: {
-            fileName: _jsxFileName,
             lineNumber: 87
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PostLoad, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PostLoad, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 89
           },
           __self: this
         }));
@@ -686,7 +668,7 @@ function (_React$Component) {
         className: "post-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 95
         },
         __self: this
       }, posts.map(function (item) {
@@ -695,20 +677,20 @@ function (_React$Component) {
           className: "post-item",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 97
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-          href: "post/?id=".concat(item.id),
+          href: "post?id=".concat(item.id),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 98
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97
+            lineNumber: 99
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -718,74 +700,66 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98
+            lineNumber: 100
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "content",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 110
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-          href: "post/?id=".concat(item.id),
+          href: "post?id=".concat(item.id),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109
+            lineNumber: 111
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
           className: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110
+            lineNumber: 112
           },
           __self: this
         }, item.title)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "excerpt",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 114
           },
           __self: this
         }, item.excerpt)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "time",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 116
           },
           __self: this
         }, Object(_utils__WEBPACK_IMPORTED_MODULE_10__["relative"])(item.created_at)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "tags",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 117
           },
           __self: this
         }, item.tags.map(function (tag) {
-          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-            key: tag,
-            href: "archive/?tag=".concat(tag),
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 117
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
             className: "tag",
             __source: {
               fileName: _jsxFileName,
               lineNumber: 118
             },
             __self: this
-          }, "#", tag));
+          }, "#", tag);
         })));
       }), loadEnd ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "loadEnd",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 124
         },
         __self: this
       }, "\u52A0\u8F7D\u5B8C\u6BD5") : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -793,7 +767,7 @@ function (_React$Component) {
         onClick: this.loadMore.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 126
         },
         __self: this
       }, loadText));
@@ -804,6 +778,41 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 
+
+/***/ }),
+
+/***/ "./components/Title.js":
+/*!*****************************!*\
+  !*** ./components/Title.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-server/head */ "./node_modules/next-server/head.js");
+/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Title.js";
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var title = _ref.title;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, title));
+});
 
 /***/ }),
 
@@ -820,7 +829,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _sleepy_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sleepy.config */ "./sleepy.config.js");
 /* harmony import */ var _sleepy_config__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sleepy_config__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
+/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Title */ "./components/Title.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/layouts/Home.js";
@@ -838,7 +847,7 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/layouts/Home.js";
       lineNumber: 7
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: _sleepy_config__WEBPACK_IMPORTED_MODULE_1__["seo"].title,
     __source: {
       fileName: _jsxFileName,
@@ -12015,19 +12024,19 @@ module.exports = {
     title: "老赵茶馆",
     keywords: "老赵, 茶馆, 前端, 代码, 扯淡, 音乐, 电影, 分享",
     description: "Hi, 老赵其实不老, 是一枚前端攻城狮, 就这样. QQ群：320881312",
-    copyright: '© 2018 All Rights Reserved. 粤ICP备15035931号-1.'
+    copyright: '© 2019 All Rights Reserved. Theme by Sleepy.'
   },
   github: {
     clientID: "2fa6841ea796af21b439",
     clientSecret: "4e2196768a4ce9ce143bf2b2ba378efcbd8081f8",
-    repo: "zhw2590582.github.io",
+    repo: "sleepy",
     owner: "zhw2590582",
     admin: ["zhw2590582"]
   },
   images: {
-    banner: 'https://img1.doubanio.com/view/photo/l/public/p2516846469.webp',
+    banner: '',
     avatar: '',
-    poster: 'https://img1.doubanio.com/view/photo/l/public/p2516846469.webp'
+    poster: ''
   },
   post: {
     excerpt: 120,
@@ -12040,13 +12049,7 @@ module.exports = {
     name: "关于",
     link: "/about"
   }, {
-    name: "归档",
-    link: "/archive"
-  }, {
-    name: "留言",
-    link: "/message"
-  }, {
-    name: "友链",
+    name: "邻居",
     link: "/friends"
   }]
 };
@@ -12080,7 +12083,7 @@ function relative(time) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 8:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzhaohaiwei%2FDesktop%2Fsleepy%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -12103,5 +12106,5 @@ module.exports = dll_9d2e7eb3ce4bb71fa337;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[8,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map
