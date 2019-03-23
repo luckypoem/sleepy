@@ -1,6 +1,3 @@
-import { seo } from '../sleepy.config';
+import { seo } from "../sleepy.config";
 
-export default () => 
-    <div className="footer">
-        {seo.copyright}
-    </div>
+export default () => <div className="footer">{seo.copyright}</div>;

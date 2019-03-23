@@ -1,3 +1,5 @@
+$bg-color: #d9d3c1;
+
 html,
 body,
 #__next {
@@ -58,9 +60,7 @@ img {
     position: relative;
     height: 100%;
     overflow: auto;
-    background-image: url(/static/body.png);
-    background-color: #bab39c;
-    background-size: 100px;
+    background-color: $bg-color;
 
     .layout {
         position: relative;
@@ -71,12 +71,37 @@ img {
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
 
         .header {
+            position: relative;
             display: flex;
             flex-direction: column;
             height: 220px;
             background-repeat: no-repeat;
             background-position: top center;
             background-size: cover;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                left: -7px;
+                z-index: 1;
+                width: 15px;
+                height: 15px;
+                background: $bg-color;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                right: -7px;
+                z-index: 1;
+                width: 15px;
+                height: 15px;
+                background: $bg-color;
+                border-radius: 50%;
+            }
 
             .header-top {
                 position: relative;
@@ -192,93 +217,51 @@ img {
         }
 
         .footer {
+            position: relative;
             display: flex;
             align-items: center;
-            height: 40px;
-            padding: 0 10px;
-            color: #333;
-            font-size: 12px;
-            border-top: 1px dashed #9e978d;
+            justify-content: center;
+            height: 50px;
+            padding: 0 20px;
+            color: #464338;
+            font-size: 13px;
+            border-top: 1px dashed $bg-color;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -7px;
+                left: -7px;
+                z-index: 1;
+                width: 15px;
+                height: 15px;
+                background: $bg-color;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -7px;
+                right: -7px;
+                z-index: 1;
+                width: 15px;
+                height: 15px;
+                background: $bg-color;
+                border-radius: 50%;
+            }
         }
     }
 }
 
 .post-list {
-    .post-item {
-        position: relative;
-        display: flex;
-        margin-bottom: 30px;
-
-        .poster {
-            width: 120px;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-size: cover;
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding-left: 15px;
-
-            .title {
-                font-size: 16px;
-                line-height: 1.6;
-                color: #4c3414;
-            }
-
-            .excerpt {
-                font-size: 13px;
-                line-height: 1.5;
-                margin-bottom: 5px;
-                color: #666;
-            }
-        }
-
-        .time {
-            position: absolute;
-            left: -40px;
-            top: 0;
-            width: 20px;
-            font-size: 12px;
-            text-align: center;
-            padding: 5px 0;
-            line-height: 1.4;
-            word-break: break-all;
-            color: #fff;
-            background: #e6ae39;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2);
-            text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
-        }
-
-        .tags {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            margin-left: 310px;
-            font-size: 12px;
-            display: flex;
-            flex-direction: column;
-            .tag {
-                color: #6f6545;
-                text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
-                margin-bottom: 15px;
-            }
-        }
-    }
-
     .loadMore {
         cursor: pointer;
         height: 30px;
         line-height: 30px;
         text-align: center;
         color: #fff;
-        background: #bbb49d;
+        background: $bg-color;
         border-radius: 3px;
     }
 
@@ -286,6 +269,81 @@ img {
         height: 30px;
         line-height: 30px;
         text-align: center;
-        color: #756655;
+        color: $bg-color;
+    }
+}
+
+.post-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 30px;
+
+    .poster {
+        width: 120px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-left: 15px;
+
+        .title {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4c3414;
+        }
+
+        .excerpt {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            min-height: 60px;
+            color: #666;
+        }
+
+        .html {
+            font-size: 15px;
+            color: #464337;
+        }
+    }
+
+    .time {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        width: 20px;
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 0;
+        line-height: 1.4;
+        word-break: break-all;
+        color: #fff;
+        background: #e6ae39;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2);
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .tags {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin-left: 310px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        .tag {
+            color: #6f6545;
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+            margin-bottom: 15px;
+        }
     }
 }

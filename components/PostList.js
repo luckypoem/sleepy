@@ -70,6 +70,8 @@ export default class extends React.Component {
       })
       .then(data => {
         this.setState(prevState => ({
+          loadState: false,
+          loadText: "加载更多",
           loadEnd: data.length < post.pageSize,
           page: prevState.page,
           posts: [...prevState.posts, ...data]
@@ -93,7 +95,7 @@ export default class extends React.Component {
       <div className="post-list">
         {posts.map(item => (
           <div key={item.id} className="post-item">
-            <Link href={`post/?id=${item.id}`}>
+            <Link href={`post?id=${item.id}`}>
               <a>
                 <div
                   className="poster"
@@ -106,18 +108,14 @@ export default class extends React.Component {
               </a>
             </Link>
             <div className="content">
-              <Link href={`post/?id=${item.id}`}>
+              <Link href={`post?id=${item.id}`}>
                 <a className="title">{item.title}</a>
               </Link>
               <div className="excerpt">{item.excerpt}</div>
             </div>
             <div className="time">{relative(item.created_at)}</div>
             <div className="tags">
-              {item.tags.map(tag => (
-                <Link key={tag} href={`archive/?tag=${tag}`}>
-                  <a className="tag">#{tag}</a>
-                </Link>
-              ))}
+              {item.tags.map(tag => <span className="tag">#{tag}</span>)}
             </div>
           </div>
         ))}

@@ -12,7 +12,9 @@ export default ({ banner }) => (
       <div
         className="blur"
         style={{
-          backgroundImage: `url(${banner || images.banner || "/static/banner.png"})`
+          backgroundImage: `url(${banner ||
+            images.banner ||
+            "/static/banner.png"})`
         }}
       />
       <div className="menus">
@@ -25,17 +27,21 @@ export default ({ banner }) => (
         ))}
       </div>
       <div className="github">
-          <a href="https://github.com/zhw2590582/sleepy">Github</a>
+        <a href="https://github.com/zhw2590582/sleepy">Github</a>
       </div>
     </div>
     <div className="header-center" />
     <div className="header-bottom">
-      <div
-        className="avatar"
-        style={{
-          backgroundImage: `url(${images.avatar || "/static/avatar.png"})`
-        }}
-      />
+      <Link href={menus[0].link}>
+        <a>
+          <div
+            className="avatar"
+            style={{
+              backgroundImage: `url(${images.avatar || "/static/avatar.png"})`
+            }}
+          />
+        </a>
+      </Link>
       <div className="name">
         <div className="title">{seo.title}</div>
         <div className="description">{seo.description}</div>

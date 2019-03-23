@@ -125,10 +125,11 @@ class GetGithubIssue {
 
         return this.getRequest(url).then(data => {
             const result = data.map(item => {
+                const ItemResult = this.format(item);
                 if (this.option.cache) {
-                    this.cache.set(`id=${item.number}`, item);
+                    this.cache.set(`id=${item.number}`, ItemResult);
                 }
-                return this.format(item);
+                return ItemResult;
             });
             if (this.option.cache) {
                 this.cache.set(key, result);

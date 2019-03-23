@@ -1,7 +1,9 @@
 import React from "react";
 import App, { Container } from "next/app";
-import "../styles/index.scss";
 import "normalize.css";
+import "github-markdown-css";
+import "gitting/dist/gitting.css";
+import "../styles/index.scss";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

@@ -30,6 +30,8 @@
   "dependencies": {
     "dayjs": "^1.8.11",
     "get-github-issue": "^1.0.3",
+    "github-markdown-css": "^3.0.1",
+    "gitting": "^1.1.4",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
