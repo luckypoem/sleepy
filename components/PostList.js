@@ -42,10 +42,9 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    const { query } = this.props;
     api
       .byPage({
-        page: query.page || 1
+        page: this.state.page
       })
       .then(data => {
         this.setState(() => ({

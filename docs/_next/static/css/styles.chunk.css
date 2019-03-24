@@ -1665,5 +1665,14 @@ img {
       text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
       margin-bottom: 15px; }
 
+.wrapper .layout.mobile {
+  width: 100%; }
+  .wrapper .layout.mobile .post-item .poster {
+    display: none; }
+  .wrapper .layout.mobile .post-item .time {
+    left: -20px; }
+  .wrapper .layout.mobile .post-wrapper .content {
+    padding-left: 10px !important; }
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

@@ -348,3 +348,23 @@ img {
         }
     }
 }
+
+.wrapper .layout.mobile {
+    width: 100%;
+
+    .post-item {
+        .poster {
+            display: none;
+        }
+    
+        .time {
+            left: -20px;
+        }
+    }
+
+    .post-wrapper {
+        .content {
+            padding-left: 10px !important;
+        }
+    }
+}
