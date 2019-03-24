@@ -1,4 +1,4 @@
-import { menus, images, seo } from "../sleepy.config";
+import { menus, images, seo, github } from "../sleepy.config";
 import Link from "next/link";
 
 export default ({ banner }) => (
@@ -27,7 +27,7 @@ export default ({ banner }) => (
         ))}
       </div>
       <div className="github">
-        <a href="https://github.com/zhw2590582/sleepy">Github</a>
+        <a href={`https://github.com/${github.owner}/${github.repo}/issues`} target="_blank">Github</a>
       </div>
     </div>
     <div className="header-center" />

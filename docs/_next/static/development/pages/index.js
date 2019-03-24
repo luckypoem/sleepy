@@ -436,7 +436,8 @@ var _jsxFileName = "/Users/zhaohaiwei/Desktop/sleepy/components/Header.js";
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://github.com/zhw2590582/sleepy",
+    href: "https://github.com/".concat(_sleepy_config__WEBPACK_IMPORTED_MODULE_1__["github"].owner, "/").concat(_sleepy_config__WEBPACK_IMPORTED_MODULE_1__["github"].repo, "/issues"),
+    target: "_blank",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
