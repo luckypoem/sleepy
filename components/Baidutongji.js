@@ -7,7 +7,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    if (baidutongji) {
+    if (baidutongji && !window._hmt) {
       window._hmt = window._hmt || [];
       const hm = document.createElement("script");
       hm.src = `https://hm.baidu.com/hm.js?${baidutongji}`;
