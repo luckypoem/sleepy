@@ -306,6 +306,7 @@ img {
             margin-bottom: 5px;
             min-height: 60px;
             color: #666;
+            word-break: break-all;
         }
 
         .html {
@@ -360,11 +361,27 @@ img {
         .time {
             left: -20px;
         }
+
+        .tags {
+            display: none;
+        }
     }
 
     .post-wrapper {
         .content {
             padding-left: 10px !important;
+        }
+    }
+
+    .header {
+        &::before, &::after {
+            display: none;
+        }
+    }
+
+    .footer {
+        &::before, &::after {
+            display: none;
         }
     }
 }

@@ -1625,7 +1625,8 @@ img {
       line-height: 1.5;
       margin-bottom: 5px;
       min-height: 60px;
-      color: #666; }
+      color: #666;
+      word-break: break-all; }
     .post-item .content .html {
       font-size: 15px;
       color: #464337; }
@@ -1671,6 +1672,12 @@ img {
     display: none; }
   .wrapper .layout.mobile .post-item .time {
     left: -20px; }
+  .wrapper .layout.mobile .post-item .tags {
+    display: none; }
   .wrapper .layout.mobile .post-wrapper .content {
     padding-left: 10px !important; }
+  .wrapper .layout.mobile .header::before, .wrapper .layout.mobile .header::after {
+    display: none; }
+  .wrapper .layout.mobile .footer::before, .wrapper .layout.mobile .footer::after {
+    display: none; }
 
