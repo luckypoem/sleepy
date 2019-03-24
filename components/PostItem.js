@@ -43,7 +43,7 @@ export default class extends React.Component {
               padding: 0
             }}
           >
-            <Link href={`post?id=${post.id}`}>
+            <Link href={`/post?id=${post.id}`}>
               <a
                 className="title"
                 style={{
