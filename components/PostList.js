@@ -3,31 +3,7 @@ import Link from "next/link";
 import api from "../api";
 import { images, post } from "../sleepy.config";
 import { relative } from "../utils";
-
-const PostLoad = () => {
-  return (
-    <div className="post-item">
-      <div className="poster loading" style={{ height: 80 }} />
-      <div className="content">
-        <div
-          className="title loading"
-          style={{ height: 20, marginBottom: 5, width: "80%" }}
-        />
-        <div className="excerpt">
-          <div
-            className="loading"
-            style={{ height: 15, marginBottom: 5, width: "100%" }}
-          />
-          <div
-            className="loading"
-            style={{ height: 15, marginBottom: 5, width: "100%" }}
-          />
-          <div className="loading" style={{ height: 15, width: "50%" }} />
-        </div>
-      </div>
-    </div>
-  );
-};
+import PostLoad from "../components/PostLoad";
 
 export default class extends React.Component {
   constructor(props) {

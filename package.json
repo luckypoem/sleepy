@@ -34,6 +34,7 @@
     "gitting": "^1.1.4",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
+    "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.4"
   }
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import api from "../api";
 import Title from "./Title";
 import Gitting from "../components/Gitting";
-import PostLoad from "../components/PostLoad";
+import PageLoad from "../components/PageLoad";
 import { seo } from "../sleepy.config";
 import { relative, searchParams } from "../utils";
 
@@ -30,7 +30,7 @@ export default class extends React.Component {
   render() {
     const { post } = this.state;
     if (!post.id) {
-      return <PostLoad />;
+      return <PageLoad />;
     }
 
     return (

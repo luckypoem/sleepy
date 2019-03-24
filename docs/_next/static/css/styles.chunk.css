@@ -1374,9 +1374,6 @@ img {
 .clearfix {
   zoom: 1; }
 
-.loading {
-  background-color: rgba(0, 0, 0, 0.05); }
-
 .wrapper {
   position: relative;
   height: 100%;

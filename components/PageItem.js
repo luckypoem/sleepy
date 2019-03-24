@@ -2,7 +2,7 @@ import React from "react";
 import api from "../api";
 import Link from "next/link";
 import Title from "./Title";
-import PostLoad from "../components/PostLoad";
+import PageLoad from "../components/PageLoad";
 import { menus, seo } from "../sleepy.config";
 
 export default class extends React.Component {
@@ -33,7 +33,7 @@ export default class extends React.Component {
     const { post } = this.state;
     const { label } = this.props;
     if (!post.id) {
-      return <PostLoad />;
+      return <PageLoad />;
     }
 
     const menu = menus.find(item => item.link === `/${label}`);
