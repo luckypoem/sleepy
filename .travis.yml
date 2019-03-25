@@ -3,6 +3,10 @@ language: node_js
 node_js:
   - stable
 
+ignore:
+  - *.md
+  - docs/
+
 env:
   - NODE_ENV=production
 
