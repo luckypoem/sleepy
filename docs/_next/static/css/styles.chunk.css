@@ -1337,7 +1337,6 @@ body,
 
 body {
   font-family: Hiragino Sans GB, Microsoft YaHei, \5FAE\8F6F\96C5\9ED1, tahoma, arial, simsun, \5B8B\4F53;
-  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100% !important;
   -moz-text-size-adjust: 100% !important;
   -ms-text-size-adjust: 100% !important;
@@ -1626,7 +1625,8 @@ img {
       word-break: break-all; }
     .post-item .content .html {
       font-size: 15px;
-      color: #464337; }
+      color: #464337;
+      margin-bottom: 30px; }
   .post-item .time {
     position: absolute;
     left: -40px;

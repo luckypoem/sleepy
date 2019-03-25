@@ -1,9 +1,9 @@
-import React from "react";
-import api from "../api";
-import Link from "next/link";
-import Title from "./Title";
-import PageLoad from "../components/PageLoad";
-import { menus, seo } from "../sleepy.config";
+import React from 'react';
+import api from '../api';
+import Link from 'next/link';
+import Title from './Title';
+import PageLoad from '../components/PageLoad';
+import { menus, seo } from '../sleepy.config';
 
 export default class extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class extends React.Component {
     api
       .byPage({
         labels: label,
-        type: "PAGE"
+        type: 'PAGE'
       })
       .then(data => {
         if (data.length) {
@@ -31,12 +31,14 @@ export default class extends React.Component {
 
   render() {
     const { post } = this.state;
-    const { label } = this.props;
+    const { label, children } = this.props;
     if (!post.id) {
       return <PageLoad />;
     }
 
-    const menu = menus.find(item => item.link === `/${label}`);
+    const menu = menus.find(item => item.link === `/${label}`) || {
+      name: '未找到页面'
+    };
 
     return (
       <div className="post-item">
@@ -62,6 +64,7 @@ export default class extends React.Component {
             className="html markdown-body"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+          {children}
         </div>
       </div>
     );
