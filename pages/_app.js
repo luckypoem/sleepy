@@ -1,5 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
+import Home from "../layouts/Home";
 import "normalize.css";
 import "github-markdown-css";
 import "gitting/dist/gitting.css";
@@ -18,10 +19,13 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-
     return (
       <Container>
-        <Component {...pageProps} />
+        <div className="wrapper">
+          <Home>
+            <Component {...pageProps} />
+          </Home>
+        </div>
       </Container>
     );
   }
