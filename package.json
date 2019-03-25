@@ -22,6 +22,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.5.0",
+    "cssnano": "^4.1.10",
     "next": "^8.0.3",
     "node-sass": "^4.11.0"
   },
