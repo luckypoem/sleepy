@@ -1,4 +1,5 @@
 import React from "react";
+import Router from 'next/router';
 import Link from "next/link";
 import api from "../api";
 import Title from "./Title";
@@ -23,6 +24,8 @@ export default class extends React.Component {
           id: id,
           post: data
         }));
+      }).catch(() => {
+        Router.push('/error');
       });
     });
   }

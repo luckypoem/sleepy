@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import api from '../api';
 import Link from 'next/link';
 import Title from './Title';
@@ -26,6 +27,8 @@ export default class extends React.Component {
             post: data[0]
           }));
         }
+      }).catch(() => {
+        Router.push('/error');
       });
   }
 
@@ -37,7 +40,7 @@ export default class extends React.Component {
     }
 
     const menu = menus.find(item => item.link === `/${label}`) || {
-      name: '未找到页面'
+      name: 'Not Found'
     };
 
     return (
