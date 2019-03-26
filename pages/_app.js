@@ -1,34 +1,44 @@
-import React from "react";
-import App, { Container } from "next/app";
-import Home from "../layouts/Home";
-import "normalize.css";
-import "github-markdown-css";
-import "gitting/dist/gitting.css";
-import "../styles/index.scss";
+import React from 'react';
+import App, { Container } from 'next/app';
+import Home from '../layouts/Home';
+import { initializeStore } from '../store';
+import { Provider } from 'mobx-react';
+import 'normalize.css';
+import 'github-markdown-css';
+import 'gitting/dist/gitting.css';
+import '../styles/index.scss';
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+export default class extends App {
+  static async getInitialProps(appContext) {
+    const mobxStore = initializeStore();
+    appContext.ctx.mobxStore = mobxStore;
+    let appProps = await App.getInitialProps(appContext);
+    return {
+      ...appProps,
+      initialMobxState: mobxStore
+    };
+  }
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
+  constructor(props) {
+    super(props);
+    const isServer = !process.browser;
+    this.mobxStore = isServer
+      ? props.initialMobxState
+      : initializeStore(props.initialMobxState);
   }
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <div className="wrapper">
-          <Home>
-            <Component {...pageProps} />
-          </Home>
-        </div>
+        <Provider store={this.mobxStore}>
+          <div className="wrapper">
+            <Home>
+              <Component {...pageProps} />
+            </Home>
+          </div>
+        </Provider>
       </Container>
     );
   }
 }
-
-export default MyApp;

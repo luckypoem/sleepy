@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Title from './Title';
 import PageLoad from '../components/PageLoad';
 import { menus, seo } from '../sleepy.config';
+import { t } from '../utils';
 
 export default class extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class extends React.Component {
     }
 
     const menu = menus.find(item => item.link === `/${label}`) || {
-      name: 'Not Found'
+      name: t('notFoundTitle')
     };
 
     return (

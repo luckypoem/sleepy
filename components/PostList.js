@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import api from "../api";
 import { images, post } from "../sleepy.config";
-import { relative } from "../utils";
+import { relative, format, t } from "../utils";
 import PostLoad from "../components/PostLoad";
 
 export default class extends React.Component {
@@ -12,7 +12,7 @@ export default class extends React.Component {
       loadState: false,
       loadEnd: false,
       page: 1,
-      loadText: "加载更多",
+      loadText: t('loadMore'),
       posts: []
     };
   }
@@ -36,7 +36,7 @@ export default class extends React.Component {
 
     this.setState(() => ({
       loadState: true,
-      loadText: "加载中..."
+      loadText: t('loading')
     }));
 
     api
@@ -46,7 +46,7 @@ export default class extends React.Component {
       .then(data => {
         this.setState(prevState => ({
           loadState: false,
-          loadText: "加载更多",
+          loadText: t('loadMore'),
           loadEnd: data.length < post.pageSize,
           page: prevState.page,
           posts: [...prevState.posts, ...data]
@@ -74,6 +74,7 @@ export default class extends React.Component {
               <a>
                 <div
                   className="poster"
+                  title={item.title}
                   style={{
                     backgroundImage: `url(${item.poster ||
                       images.poster ||
@@ -84,11 +85,11 @@ export default class extends React.Component {
             </Link>
             <div className="content">
               <Link href={`post?id=${item.id}`}>
-                <a className="title">{item.title}</a>
+                <a className="title" title={item.title}>{item.title}</a>
               </Link>
               <div className="excerpt">{item.excerpt}</div>
             </div>
-            <div className="time">{relative(item.created_at)}</div>
+            <div className="time" title={format(item.created_at)}>{relative(item.created_at)}</div>
             <div className="tags">
               {item.tags.map(tag => <span className="tag">#{tag}</span>)}
             </div>
@@ -96,7 +97,7 @@ export default class extends React.Component {
         ))}
 
         {loadEnd ? (
-          <div className="loadEnd">加载完毕</div>
+          <div className="loadEnd">{t('loadEnd')}</div>
         ) : (
           <div className="loadMore" onClick={this.loadMore.bind(this)}>
             {loadText}

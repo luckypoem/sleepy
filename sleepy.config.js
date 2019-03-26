@@ -35,5 +35,26 @@ module.exports = {
             name: "邻居",
             link: "/friends"
         }
-    ]
+    ],
+    i18n: {
+        default: 'zh-cn',
+        language: {
+            'zh-cn': {
+                loadEnd: '加载完毕',
+                loadMore: '加载更多',
+                loading: '加载中...',
+                notFoundTitle: '未发现页面',
+                notFoundMsg: '您查询的页面不存在，请重新检查',
+                commentLocked: '评论已锁定'
+            },
+            'en': {
+                loadEnd: 'Load completed',
+                loadMore: 'Load more',
+                loading: 'Loading...',
+                notFoundTitle: 'No Page Found',
+                notFoundMsg: 'The page you are querying does not exist, please check again',
+                commentLocked: 'Comment locked'
+            }
+        }
+    },
 };

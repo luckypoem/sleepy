@@ -1,7 +1,7 @@
-import PageItem from "../components/PageItem";
+import Error from "../components/Error";
 
 export default () => (
   <div className="page page-error">
-    <PageItem label="error" />
+    <Error />
   </div>
 );

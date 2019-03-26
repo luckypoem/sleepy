@@ -1,13 +1,16 @@
 import React from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
+import { inject, observer } from 'mobx-react';
 import api from '../api';
 import Title from './Title';
 import Gitting from '../components/Gitting';
 import PageLoad from '../components/PageLoad';
 import { seo } from '../sleepy.config';
-import { relative, searchParams } from '../utils';
+import { relative, format, searchParams, t } from '../utils';
 
+@inject('store')
+@observer
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +55,7 @@ export default class extends React.Component {
             <Link href={`/post?id=${post.id}`}>
               <a
                 className="title"
+                title={item.title}
                 style={{
                   marginBottom: 10,
                   fontSize: 18
@@ -65,14 +69,14 @@ export default class extends React.Component {
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
           </div>
-          <div className="time">{relative(post.created_at)}</div>
+          <div className="time" title={format(post.created_at)}>{relative(post.created_at)}</div>
           <div className="tags">
             {post.tags.map(tag => (
               <span className="tag">#{tag}</span>
             ))}
           </div>
         </div>
-        {post.locked ? <div className="locked">评论已锁定</div> : <Gitting id={this.state.id} />}
+        {post.locked ? <div className="locked">{t('commentLocked')}</div> : <Gitting id={this.state.id} />}
       </div>
     );
   }

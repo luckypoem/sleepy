@@ -1,32 +1,17 @@
 import React from 'react';
-import { menus, images, seo, github } from '../sleepy.config';
+import { inject, observer } from 'mobx-react';
+import { menus, seo, github } from '../sleepy.config';
 import Link from 'next/link';
-import stackBlurToUrl from 'stack-blur-to-url';
 
+@inject('store')
+@observer
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      banner: props.banner || images.banner || '/static/banner.png',
-      avatar: props.avatar || images.avatar || '/static/avatar.png',
-      blurBanner: props.banner || images.banner || '/static/banner.png',
-    };
-  }
-
-  componentDidMount() {
-    stackBlurToUrl(this.state.banner, 30).then(url => {
-      this.setState({
-        blurBanner: url
-      });
-    });
-  }
-
-  componentWillUnmount() {
-    window.URL.revokeObjectURL(this.state.blurBanner);
   }
 
   render() {
-    const { banner, avatar, blurBanner } = this.state;
+    const { banner, avatar } = this.props.store;
     return (
       <div
         className="header"
@@ -34,12 +19,13 @@ export default class extends React.Component {
           backgroundImage: `url(${banner})`
         }}
       >
-        <div
-          className="header-top"
-          style={{
-            backgroundImage: `url(${blurBanner})`
-          }}
-        >
+        <div className="header-top">
+          <div
+            className="blurBanner"
+            style={{
+              backgroundImage: `url(${banner})`
+            }}
+          />
           <div className="menus">
             {menus.map(item => (
               <div key={item.name} className="menu-item">

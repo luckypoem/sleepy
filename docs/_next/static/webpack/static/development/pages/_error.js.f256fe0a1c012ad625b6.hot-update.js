@@ -1,0 +1,70 @@
+webpackHotUpdate("static/development/pages/_error.js",{
+
+/***/ "./components/Error.js":
+false,
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
+false,
+
+/***/ "./node_modules/core-js/library/fn/promise.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_invoke.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_microtask.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_new-promise-capability.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_perform.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_promise-resolve.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_species-constructor.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_task.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/_user-agent.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/es6.promise.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/es7.promise.finally.js":
+false,
+
+/***/ "./node_modules/core-js/library/modules/es7.promise.try.js":
+false,
+
+/***/ "./node_modules/dayjs/dayjs.min.js":
+false,
+
+/***/ "./node_modules/dayjs/locale/zh-cn.js":
+false,
+
+/***/ "./node_modules/dayjs/plugin/relativeTime.js":
+false,
+
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_error&absolutePagePath=%2FUsers%2Fzhaohaiwei%2FDesktop%2Fgithub%2Fsleepy%2Fpages%2F_error.js!./":
+false,
+
+/***/ "./pages/_error.js":
+false,
+
+/***/ "./sleepy.config.js":
+false,
+
+/***/ "./utils/index.js":
+false,
+
+/***/ 7:
+false
+
+})
+//# sourceMappingURL=_error.js.f256fe0a1c012ad625b6.hot-update.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/webpack/static/development/pages/_error.js.879c49d769634727d8e7.hot-update.js","sources":["webpack:///./components/Error.js"],"sourcesContent":["import { t } from '../utils';\n\nexport default () => <div className=\"error\">error</div>;"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;A","sourceRoot":""}
