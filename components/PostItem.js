@@ -55,7 +55,6 @@ export default class extends React.Component {
             <Link href={`/post?id=${post.id}`}>
               <a
                 className="title"
-                title={item.title}
                 style={{
                   marginBottom: 10,
                   fontSize: 18

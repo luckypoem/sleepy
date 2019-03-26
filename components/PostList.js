@@ -85,7 +85,7 @@ export default class extends React.Component {
             </Link>
             <div className="content">
               <Link href={`post?id=${item.id}`}>
-                <a className="title" title={item.title}>{item.title}</a>
+                <a className="title">{item.title}</a>
               </Link>
               <div className="excerpt">{item.excerpt}</div>
             </div>
