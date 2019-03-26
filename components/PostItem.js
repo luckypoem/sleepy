@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import Router from 'next/router';
-import Link from "next/link";
-import api from "../api";
-import Title from "./Title";
-import Gitting from "../components/Gitting";
-import PageLoad from "../components/PageLoad";
-import { seo } from "../sleepy.config";
-import { relative, searchParams } from "../utils";
+import Link from 'next/link';
+import api from '../api';
+import Title from './Title';
+import Gitting from '../components/Gitting';
+import PageLoad from '../components/PageLoad';
+import { seo } from '../sleepy.config';
+import { relative, searchParams } from '../utils';
 
 export default class extends React.Component {
   constructor(props) {
@@ -19,14 +19,17 @@ export default class extends React.Component {
 
   componentDidMount() {
     searchParams('id').then(id => {
-      api.byId(id).then(data => {
-        this.setState(() => ({
-          id: id,
-          post: data
-        }));
-      }).catch(() => {
-        Router.push('/error');
-      });
+      api
+        .byId(id)
+        .then(data => {
+          this.setState(() => ({
+            id: id,
+            post: data
+          }));
+        })
+        .catch(() => {
+          Router.push('/error');
+        });
     });
   }
 
@@ -64,10 +67,12 @@ export default class extends React.Component {
           </div>
           <div className="time">{relative(post.created_at)}</div>
           <div className="tags">
-            {post.tags.map(tag => <span className="tag">#{tag}</span>)}
+            {post.tags.map(tag => (
+              <span className="tag">#{tag}</span>
+            ))}
           </div>
         </div>
-        <Gitting id={this.state.id} />
+        {post.locked ? <div className="locked">评论已锁定</div> : <Gitting id={this.state.id} />}
       </div>
     );
   }

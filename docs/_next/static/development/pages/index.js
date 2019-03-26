@@ -120,6 +120,7 @@ function () {
         }),
         url: issue.url,
         id: issue.number,
+        locked: issue.locked,
         excerpt: '',
         poster: ''
       };
@@ -11536,7 +11537,7 @@ function isMobile() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzhaohaiwei%2FDesktop%2Fgithub%2Fsleepy%2Fpages%2Findex.js ***!
   \*************************************************************************************************************************************/
@@ -11559,5 +11560,5 @@ module.exports = dll_55dc4e2ecf7824085104;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]));;
+},[[5,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map

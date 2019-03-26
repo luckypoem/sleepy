@@ -86,6 +86,7 @@ class GetGithubIssue {
                 .map(tag => tag.name),
             url: issue.url,
             id: issue.number,
+            locked: issue.locked,
             excerpt: '',
             poster: '',
         };

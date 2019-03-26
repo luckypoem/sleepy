@@ -120,6 +120,7 @@ function () {
         }),
         url: issue.url,
         id: issue.number,
+        locked: issue.locked,
         excerpt: '',
         poster: ''
       };
@@ -572,7 +573,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_PageLoad__WEBPACK_IMPORTED_MODULE_11__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 39
           },
           __self: this
         });
@@ -582,21 +583,21 @@ function (_React$Component) {
         className: "post-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Title__WEBPACK_IMPORTED_MODULE_9__["default"], {
         title: "".concat(_sleepy_config__WEBPACK_IMPORTED_MODULE_12__["seo"].title, " | ").concat(post.title),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 44
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "post-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -606,14 +607,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 46
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
         href: "/post?id=".concat(post.id),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
@@ -624,7 +625,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 53
         },
         __self: this
       }, post.title)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -634,21 +635,21 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 63
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "time",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 68
         },
         __self: this
       }, Object(_utils__WEBPACK_IMPORTED_MODULE_13__["relative"])(post.created_at)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "tags",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 69
         },
         __self: this
       }, post.tags.map(function (tag) {
@@ -656,15 +657,22 @@ function (_React$Component) {
           className: "tag",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 71
           },
           __self: this
         }, "#", tag);
-      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Gitting__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }))), post.locked ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "locked",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: this
+      }, "\u8BC4\u8BBA\u5DF2\u9501\u5B9A") : react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Gitting__WEBPACK_IMPORTED_MODULE_10__["default"], {
         id: this.state.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 75
         },
         __self: this
       }));
@@ -11956,7 +11964,7 @@ function isMobile() {
 
 /***/ }),
 
-/***/ 8:
+/***/ 6:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpost&absolutePagePath=%2FUsers%2Fzhaohaiwei%2FDesktop%2Fgithub%2Fsleepy%2Fpages%2Fpost.js ***!
   \****************************************************************************************************************************************/
@@ -11979,5 +11987,5 @@ module.exports = dll_55dc4e2ecf7824085104;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js"]]]));;
+},[[6,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=post.js.map
