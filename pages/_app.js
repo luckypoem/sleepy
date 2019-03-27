@@ -1,6 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import Home from '../layouts/Home';
+import Layouts from '../layouts';
 import { initializeStore } from '../store';
 import { Provider } from 'mobx-react';
 import 'normalize.css';
@@ -32,11 +32,9 @@ export default class extends App {
     return (
       <Container>
         <Provider store={this.mobxStore}>
-          <div className="wrapper">
-            <Home>
-              <Component {...pageProps} />
-            </Home>
-          </div>
+          <Layouts>
+            <Component {...pageProps} />
+          </Layouts>
         </Provider>
       </Container>
     );

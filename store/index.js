@@ -1,14 +1,14 @@
 import { action, observable } from 'mobx';
 import { useStaticRendering } from 'mobx-react';
-import { images } from '../sleepy.config';
+import { theme } from '../sleepy.config';
 
 const isServer = !process.browser;
 useStaticRendering(isServer);
 
 class Store {
-  @observable banner = images.banner || '/static/banner.png';
-  @observable avatar = images.avatar || '/static/avatar.png';
-  @observable blurBanner = images.banner || '/static/banner.png';
+  @observable banner = theme.banner || '/static/banner.png';
+  @observable avatar = theme.avatar || '/static/avatar.png';
+  @observable bodyBg = theme.bodyBg || '#cabdaf';
 
   constructor(isServer, initialData = {}) {
     if (initialData.banner) {
@@ -18,6 +18,10 @@ class Store {
     if (initialData.avatar) {
       this.avatar = initialData.avatar;
     }
+
+    if (initialData.bodyBg) {
+      this.bodyBg = initialData.bodyBg;
+    }
   }
 
   @action changeBanner = banner => {
@@ -26,6 +30,10 @@ class Store {
 
   @action changeAvatar = avatar => {
     this.avatar = avatar;
+  };
+
+  @action changeBodyBg = bodyBg => {
+    this.bodyBg = bodyBg;
   };
 }
 

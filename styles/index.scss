@@ -1,5 +1,3 @@
-$bg-color: #cabdaf;
-
 html,
 body,
 #__next {
@@ -45,7 +43,7 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: $bg-color;
+  background-color: var(--body-bg);
 
   .layout {
     position: relative;
@@ -73,7 +71,7 @@ img {
         z-index: 1;
         width: 15px;
         height: 15px;
-        background: $bg-color;
+        background: var(--body-bg);
         border-radius: 50%;
       }
 
@@ -85,7 +83,7 @@ img {
         z-index: 1;
         width: 15px;
         height: 15px;
-        background: $bg-color;
+        background: var(--body-bg);
         border-radius: 50%;
       }
 
@@ -210,7 +208,7 @@ img {
           line-height: 30px;
           text-align: center;
           color: #fff;
-          background: $bg-color;
+          background: #cabdae;
           border-radius: 3px;
         }
 
@@ -218,7 +216,7 @@ img {
           height: 30px;
           line-height: 30px;
           text-align: center;
-          color: $bg-color;
+          color: #cabdae;
         }
       }
 
@@ -332,7 +330,7 @@ img {
       padding: 0 20px;
       color: #464338;
       font-size: 13px;
-      border-top: 1px dashed $bg-color;
+      border-top: 1px dashed var(--body-bg);
 
       &::before {
         content: '';
@@ -342,7 +340,7 @@ img {
         z-index: 1;
         width: 15px;
         height: 15px;
-        background: $bg-color;
+        background: var(--body-bg);
         border-radius: 50%;
       }
 
@@ -354,46 +352,46 @@ img {
         z-index: 1;
         width: 15px;
         height: 15px;
-        background: $bg-color;
+        background: var(--body-bg);
         border-radius: 50%;
       }
     }
+  }
 
-    &.mobile {
-      width: 100%;
+  &.mobile {
+    width: 100%;
 
-      .post-item {
-        .poster {
-          display: none;
-        }
-
-        .time {
-          left: -20px;
-        }
-
-        .tags {
-          display: none;
-        }
+    .post-item {
+      .poster {
+        display: none;
       }
 
-      .post-wrapper {
-        .content {
-          padding-left: 10px !important;
-        }
+      .time {
+        left: -20px;
       }
 
-      .header {
-        &::before,
-        &::after {
-          display: none;
-        }
+      .tags {
+        display: none;
       }
+    }
 
-      .footer {
-        &::before,
-        &::after {
-          display: none;
-        }
+    .post-wrapper {
+      .content {
+        padding-left: 10px !important;
+      }
+    }
+
+    .header {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .footer {
+      &::before,
+      &::after {
+        display: none;
       }
     }
   }

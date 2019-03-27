@@ -433,7 +433,7 @@ function (_React$Component) {
           className: "poster",
           title: item.title,
           style: {
-            backgroundImage: "url(".concat(item.poster || _sleepy_config__WEBPACK_IMPORTED_MODULE_9__["images"].poster || "/static/poster.png", ")")
+            backgroundImage: "url(".concat(item.poster || _sleepy_config__WEBPACK_IMPORTED_MODULE_9__["theme"].poster || "/static/poster.png", ")")
           },
           __source: {
             fileName: _jsxFileName,
@@ -11477,10 +11477,11 @@ module.exports = {
     admin: ["zhw2590582"]
   },
   baidutongji: '1c0f5055781b8c6f7e0d7800a2f70f53',
-  images: {
+  theme: {
     banner: '',
     avatar: '',
-    poster: ''
+    poster: '',
+    bodyBg: ''
   },
   post: {
     excerpt: 120,

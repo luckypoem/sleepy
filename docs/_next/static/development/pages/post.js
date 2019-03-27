@@ -18042,10 +18042,11 @@ module.exports = {
     admin: ["zhw2590582"]
   },
   baidutongji: '1c0f5055781b8c6f7e0d7800a2f70f53',
-  images: {
+  theme: {
     banner: '',
     avatar: '',
-    poster: ''
+    poster: '',
+    bodyBg: ''
   },
   post: {
     excerpt: 120,

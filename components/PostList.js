@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import api from "../api";
-import { images, post } from "../sleepy.config";
+import { theme, post } from "../sleepy.config";
 import { relative, format, t } from "../utils";
 import PostLoad from "../components/PostLoad";
 
@@ -77,7 +77,7 @@ export default class extends React.Component {
                   title={item.title}
                   style={{
                     backgroundImage: `url(${item.poster ||
-                      images.poster ||
+                      theme.poster ||
                       "/static/poster.png"})`
                   }}
                 />
