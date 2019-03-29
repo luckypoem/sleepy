@@ -90,9 +90,6 @@ export default class extends React.Component {
               <div className="excerpt">{item.excerpt}</div>
             </div>
             <div className="time" title={format(item.created_at)}>{relative(item.created_at)}</div>
-            <div className="tags">
-              {item.tags.map(tag => <span className="tag">#{tag}</span>)}
-            </div>
           </div>
         ))}
 

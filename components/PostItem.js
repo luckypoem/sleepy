@@ -6,6 +6,7 @@ import api from '../api';
 import Title from './Title';
 import Gitting from '../components/Gitting';
 import PageLoad from '../components/PageLoad';
+import Navigation from '../components/Navigation';
 import { seo } from '../sleepy.config';
 import { relative, format, searchParams, t } from '../utils';
 
@@ -69,11 +70,7 @@ export default class extends React.Component {
             />
           </div>
           <div className="time" title={format(post.created_at)}>{relative(post.created_at)}</div>
-          <div className="tags">
-            {post.tags.map(tag => (
-              <span className="tag">#{tag}</span>
-            ))}
-          </div>
+          <Navigation />
         </div>
         {post.locked ? <div className="locked">{t('commentLocked')}</div> : <Gitting id={this.state.id} />}
       </div>
