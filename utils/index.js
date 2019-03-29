@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
-import { i18n } from '../sleepy.config';
+import {
+    i18n
+} from '../sleepy.config';
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/zh-cn";
 dayjs.extend(relativeTime);
@@ -22,6 +24,18 @@ export function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
     );
+}
+
+export function getNavs(html) {
+    return Array.from(html.children).filter(item => ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(item.tagName));
+}
+
+export function smoothScroll(element, distance = 0) {
+    window.scroll({
+        behavior: "smooth",
+        left: 0,
+        top: element.getBoundingClientRect().top + window.scrollY + distance
+    });
 }
 
 export function t(key) {

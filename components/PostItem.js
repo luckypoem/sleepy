@@ -8,7 +8,7 @@ import Gitting from '../components/Gitting';
 import PageLoad from '../components/PageLoad';
 import Navigation from '../components/Navigation';
 import { seo } from '../sleepy.config';
-import { relative, format, searchParams, t } from '../utils';
+import { relative, format, searchParams, getNavs, t } from '../utils';
 
 @inject('store')
 @observer
@@ -17,8 +17,10 @@ export default class extends React.Component {
     super(props);
     this.state = {
       id: null,
-      post: {}
+      post: {},
+      navigation: []
     };
+    this.htmlRef = React.createRef();
   }
 
   componentDidMount() {
@@ -28,7 +30,11 @@ export default class extends React.Component {
         .then(data => {
           this.setState(() => ({
             id: id,
-            post: data
+            post: data,
+          }));
+
+          this.setState(() => ({
+            navigation: getNavs(this.htmlRef.current)
           }));
         })
         .catch(() => {
@@ -38,7 +44,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { post } = this.state;
+    const { post, navigation } = this.state;
     if (!post.id) {
       return <PageLoad />;
     }
@@ -66,11 +72,12 @@ export default class extends React.Component {
             </Link>
             <div
               className="html markdown-body"
+              ref={this.htmlRef}
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
           </div>
           <div className="time" title={format(post.created_at)}>{relative(post.created_at)}</div>
-          <Navigation />
+          <Navigation navigation={navigation} />
         </div>
         {post.locked ? <div className="locked">{t('commentLocked')}</div> : <Gitting id={this.state.id} />}
       </div>

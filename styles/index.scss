@@ -1,3 +1,7 @@
+:root {
+  --body-bg: #cabdaf;
+}
+
 html,
 body,
 #__next {
@@ -14,6 +18,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
+  background: var(--body-bg);
 }
 
 *,
@@ -38,12 +43,9 @@ img {
 
 .wrapper {
   position: relative;
-  height: 100%;
-  overflow: auto;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: var(--body-bg);
 
   .layout {
     position: relative;
@@ -280,19 +282,36 @@ img {
           text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
         }
 
-        .tags {
-          position: absolute;
-          left: 50%;
-          top: 0;
-          margin-left: 310px;
-          font-size: 12px;
+        .navigation {
           display: flex;
           flex-direction: column;
-          width: 150px;
-          .tag {
-            color: #6f6545;
-            text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
-            margin-bottom: 15px;
+          position: fixed;
+          top: 250px;
+          left: 50%;
+          margin-left: 310px;
+          padding-left: 10px;
+          border-left: 1px solid #544738;
+
+          a {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #544738;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: -12px;
+              top: 6px;
+              width: 3px;
+              height: 3px;
+              background: #544738;
+            }
           }
         }
       }
@@ -308,6 +327,7 @@ img {
       .error {
         text-align: center;
         padding-top: 50px;
+
         .title {
           font-size: 18px;
           color: #4c3414;
@@ -370,7 +390,7 @@ img {
         left: -20px;
       }
 
-      .tags {
+      .navigation {
         display: none;
       }
     }
