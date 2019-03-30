@@ -408,7 +408,10 @@ img {
   }
 
   &.mobile {
-    width: 100%;
+
+    .layout {
+      width: 100%;
+    }
 
     .post-item {
       .poster {

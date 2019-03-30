@@ -18333,7 +18333,7 @@ function t(key) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!*******************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpost&absolutePagePath=%2FUsers%2Fzhaohaiwei%2FDesktop%2Fsleepy%2Fpages%2Fpost.js ***!
   \*******************************************************************************************************************************/
@@ -18356,5 +18356,5 @@ module.exports = dll_9d2e7eb3ce4bb71fa337;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]));;
+},[[7,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=post.js.map
