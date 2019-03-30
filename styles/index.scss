@@ -411,39 +411,39 @@ img {
 
     .layout {
       width: 100%;
-    }
 
-    .post-item {
-      .poster {
-        display: none;
+      .post-item {
+        .poster {
+          display: none;
+        }
+  
+        .time {
+          left: -20px;
+        }
+  
+        .navigation {
+          display: none;
+        }
       }
-
-      .time {
-        left: -20px;
+  
+      .post-wrapper {
+        .content {
+          padding-left: 10px !important;
+        }
       }
-
-      .navigation {
-        display: none;
+  
+      .header {
+        &::before,
+        &::after {
+          display: none;
+        }
       }
-    }
-
-    .post-wrapper {
-      .content {
-        padding-left: 10px !important;
-      }
-    }
-
-    .header {
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
-
-    .footer {
-      &::before,
-      &::after {
-        display: none;
+  
+      .footer {
+        &::before,
+        &::after {
+          display: none;
+        }
       }
     }
   }
