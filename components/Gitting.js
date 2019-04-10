@@ -1,5 +1,5 @@
 import React from 'react';
-import Gitting from 'gitting/docs/gitting-uncompiled';
+import Gitting from 'gitting';
 import { github } from '../sleepy.config';
 
 export default class extends React.Component {
