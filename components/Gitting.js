@@ -23,7 +23,6 @@ export default class extends React.Component {
     this.gitting && this.gitting.destroy && this.gitting.destroy();
   }
 
-
   render() {
     return <div ref={this.gittingRef} />;
   }
