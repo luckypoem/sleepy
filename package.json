@@ -31,12 +31,11 @@
   "dependencies": {
     "dayjs": "^1.8.11",
     "github-markdown-css": "^3.0.1",
-    "gitting": "^1.1.4",
+    "gitting": "^2.0.4",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
-    "react-color": "^2.17.0",
     "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.4"
   }

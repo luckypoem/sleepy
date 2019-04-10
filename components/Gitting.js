@@ -1,6 +1,6 @@
-import React from "react";
-import Gitting from "gitting";
-import { github } from "../sleepy.config";
+import React from 'react';
+import Gitting from 'gitting';
+import { github } from '../sleepy.config';
 
 export default class extends React.Component {
   constructor(props) {
@@ -23,7 +23,8 @@ export default class extends React.Component {
     this.gitting && this.gitting.destroy && this.gitting.destroy();
   }
 
+
   render() {
-    return <div ref={this.gittingRef} className="gitting" id="gitting-container" />;
+    return <div ref={this.gittingRef} />;
   }
 }

@@ -4,7 +4,6 @@ import { seo } from "../sleepy.config";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Customize from "../components/Customize";
 import Baidutongji from "../components/Baidutongji";
 import { isMobile } from "../utils";
 
