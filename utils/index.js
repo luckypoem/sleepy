@@ -27,7 +27,7 @@ export function isMobile() {
 }
 
 export function getNavs(html) {
-    return Array.from(html.children).filter(item => ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(item.tagName));
+    return Array.from(html.children).filter(item => ['H2', 'H3'].includes(item.tagName));
 }
 
 export function smoothScroll(element, distance = 0) {
@@ -36,6 +36,7 @@ export function smoothScroll(element, distance = 0) {
         left: 0,
         top: element.getBoundingClientRect().top + window.scrollY + distance
     });
+    return element;
 }
 
 export function t(key) {

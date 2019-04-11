@@ -11360,7 +11360,7 @@ function isMobile() {
 }
 function getNavs(html) {
   return _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default()(html.children).filter(function (item) {
-    return ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(item.tagName);
+    return ['H2', 'H3'].includes(item.tagName);
   });
 }
 function smoothScroll(element) {
@@ -11370,6 +11370,7 @@ function smoothScroll(element) {
     left: 0,
     top: element.getBoundingClientRect().top + window.scrollY + distance
   });
+  return element;
 }
 function t(key) {
   return _sleepy_config__WEBPACK_IMPORTED_MODULE_3__["i18n"].language[_sleepy_config__WEBPACK_IMPORTED_MODULE_3__["i18n"].default][key] || "Unmatched[".concat(key, "]");

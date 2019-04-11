@@ -1,4 +1,4 @@
-import { smoothScroll } from "../utils";
+import { smoothScroll } from '../utils';
 
 function scroll(nav, e) {
   e.stopPropagation();
@@ -11,7 +11,12 @@ export default ({ navigation }) => {
     <div className="navigation">
       {navigation.map((nav, index) => {
         return (
-          <a key={index} href="#" onClick={e => scroll(nav, e)}>
+          <a
+            key={index}
+            href="#"
+            onClick={e => scroll(nav, e)}
+            className={`nav-${nav.tagName.toLowerCase()}`}
+          >
             {nav.innerText}
           </a>
         );
