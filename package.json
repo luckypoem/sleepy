@@ -31,7 +31,7 @@
   "dependencies": {
     "dayjs": "^1.8.11",
     "github-markdown-css": "^3.0.1",
-    "gitting": "^2.0.7",
+    "gitting": "^2.1.0",
     "medium-zoom": "^1.0.4",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
