@@ -41,6 +41,10 @@ img {
   vertical-align: top;
 }
 
+.medium-zoom-overlay, .medium-zoom-image {
+  z-index: 2;
+}
+
 .wrapper {
   position: relative;
   background-repeat: no-repeat;
