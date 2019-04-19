@@ -622,20 +622,25 @@ function (_React$Component) {
             };
           });
 
-          Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_this2.htmlRef.current.querySelectorAll('a')).filter(function (item) {
+          var images = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_this2.htmlRef.current.querySelectorAll('a')).filter(function (item) {
             return item.children.length === 1 && item.children[0].tagName === 'IMG';
           }).map(function (item) {
             item.href = 'javascript:void(0);';
             return item.children[0];
-          }).forEach(function (item) {
-            Object(medium_zoom__WEBPACK_IMPORTED_MODULE_9__["default"])(item, {
-              background: 'rgba(255, 255, 255, 0.8)'
-            });
+          });
+
+          _this2.zoom = Object(medium_zoom__WEBPACK_IMPORTED_MODULE_9__["default"])(images, {
+            background: 'rgba(255, 255, 255, 0.8)'
           });
         }).catch(function () {
           next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/error');
         });
       });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.zoom.detach();
     }
   }, {
     key: "render",
@@ -648,7 +653,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_PageLoad__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 66
           },
           __self: this
         });
@@ -658,21 +663,21 @@ function (_React$Component) {
         className: "post-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Title__WEBPACK_IMPORTED_MODULE_11__["default"], {
         title: "".concat(_sleepy_config__WEBPACK_IMPORTED_MODULE_15__["seo"].title, " | ").concat(post.title),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 71
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "post-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 72
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -682,14 +687,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 73
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
         href: "/post?id=".concat(post.id),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 79
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
@@ -700,7 +705,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 80
         },
         __self: this
       }, post.title)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -711,7 +716,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 90
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -719,28 +724,28 @@ function (_React$Component) {
         title: Object(_utils__WEBPACK_IMPORTED_MODULE_16__["format"])(post.created_at),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 96
         },
         __self: this
       }, Object(_utils__WEBPACK_IMPORTED_MODULE_16__["relative"])(post.created_at)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_14__["default"], {
         navigation: navigation,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 99
         },
         __self: this
       })), post.locked ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "locked",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 102
         },
         __self: this
       }, Object(_utils__WEBPACK_IMPORTED_MODULE_16__["t"])('commentLocked')) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Gitting__WEBPACK_IMPORTED_MODULE_12__["default"], {
         id: this.state.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 104
         },
         __self: this
       }));

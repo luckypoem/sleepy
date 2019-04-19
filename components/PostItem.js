@@ -35,7 +35,7 @@ export default class extends React.Component {
             navigation: getNavs(this.htmlRef.current)
           }));
 
-          [...this.htmlRef.current.querySelectorAll('a')]
+          const images = [...this.htmlRef.current.querySelectorAll('a')]
             .filter(item => {
               return (
                 item.children.length === 1 && item.children[0].tagName === 'IMG'
@@ -44,17 +44,20 @@ export default class extends React.Component {
             .map(item => {
               item.href = 'javascript:void(0);';
               return item.children[0];
-            })
-            .forEach(item => {
-              mediumZoom(item, {
-                background: 'rgba(255, 255, 255, 0.8)',
-              });
+            });
+
+            this.zoom = mediumZoom(images, {
+              background: 'rgba(255, 255, 255, 0.8)',
             });
         })
         .catch(() => {
           Router.push('/error');
         });
     });
+  }
+
+  componentWillUnmount() {
+    this.zoom.detach();
   }
 
   render() {
