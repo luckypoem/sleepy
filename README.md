@@ -1,8 +1,10 @@
-# sleepy
+# Sleepy
 
 > 使用 Next.js 和 Github Issues 搭建博客
 
 [![Build Status](https://travis-ci.com/zhw2590582/sleepy.svg?branch=master)](https://travis-ci.com/zhw2590582/sleepy)
+
+## 使用
 
 博客又换了个样子，这个博客主题叫 `Sleepy`，意思就是我困了的意思，目前有以下几个功能
 
@@ -42,3 +44,11 @@
 - 新建页面 `issue`，要打上 `PAGE` 标签，而且要打上页面类型标签，页面都是内建的，目前可选的标签有：`about` 或者 `friends`。
 
 以上已经是全部步骤了，整体流程简约了很多，不过我还是觉得在 `Github Issues` 上写文章也只有国内的人才有的习惯，不过也只是很小众化的群体。
+
+## QQ群
+
+![QQ Group](./QQgroup.png)
+
+## License
+
+MIT © [Harvey Zack](https://sleepy.im/)
