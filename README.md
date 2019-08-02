@@ -1,3 +1,7 @@
+# sleepy
+
+> 使用 Next.js 和 Github Issues 搭建博客
+
 [![Build Status](https://travis-ci.com/zhw2590582/sleepy.svg?branch=master)](https://travis-ci.com/zhw2590582/sleepy)
 
 博客又换了个样子，这个博客主题叫 `Sleepy`，意思就是我困了的意思，目前有以下几个功能
